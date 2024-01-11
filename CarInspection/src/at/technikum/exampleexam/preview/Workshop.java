@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Workshop{
     boolean seniorRequired = false;
-    ArrayList<Worker> workerList = new ArrayList<Worker>();
-    Job job;
+    private ArrayList<Worker> workerList = new ArrayList<>();
+    private Job job;
     public void addWorker(Worker worker) {
 
         workerList.add(worker);
@@ -30,7 +30,7 @@ public class Workshop{
         int price = 0;
         for (Worker worker: workerList){
             price += job.getHours()/ workerList.size() * worker.getHourlyRate();
-        };
+        }
         price += job.getBasePrice();
         return price;
     }
@@ -55,7 +55,7 @@ public class Workshop{
             System.out.println(worker.toString() + " " +
                     job.getHours()/ workerList.size() +
                     " x " + worker.getHourlyRate());
-        };
+        }
         System.out.println("Inspection (new car): " + job.getBasePrice());
         System.out.println("---------");
         System.out.println("-> " + getPrice());
